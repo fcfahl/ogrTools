@@ -15,14 +15,14 @@ to start the python shell and begin using morps
 
     cities = "data/cities.shp"
 	cities_buffered = "data/cities_buffered.shp"
-	unit = 'miles'
+	buffer_distance = 500
 	format = 'shp'
 
-	morps.buffer(cities,cities_buffered,500,unit,format)
+	morps.buffer(cities,cities_buffered,500,buffer_distance,format)
 
 or even simpler
 
-	morps.buffer("data/cities.shp","data/cities_buffered.shp",500,"miles","shp")
+	morps.buffer("data/cities.shp","data/cities_buffered.shp",500,"shp")
 
 Installation
 ========
@@ -30,7 +30,7 @@ Installation
 
 To install Morps, clone this repository or download the latest build from the [Python Package Index](https://pypi.python.org/pypi/Morps/0.1.4). Unzip the file and open the terminal (or Windows Command Shell) and cd into the directory. Type the following command to install:
 
-    python setup.py install
+    pip install .
 
 If it installs with no errors, start the Python shell and attempt to import morps
 
@@ -38,8 +38,12 @@ If it installs with no errors, start the Python shell and attempt to import morp
 
 All right, lets Merk some Morps!
 
+>Note: If you do not have pip installed (lookin' at you, Windows) you can install it by following [these instructions](https://pip.pypa.io/en/latest/installing.html#install-pip). If you get errors when typing pip into the command shell (after running get-pip.py) you may need to add pip to your %PATH% variable. 
 
-Geoprocessing Supported by Morps:
+
+>Windows users: To add pip to the %PATH% variable, open Control Panel > System and Security > System > Advanced System Settings > Environment Variables > Under "System Variables" scroll down to 'Path', click it and then click edit. Add the following text to the end of the Variable Value: ;C:\Path\To\Python\Scripts  where \Path\To\Python is the directory path to your local install of Python. It may look something like C:\Python27 or if you are an ArcGIS user it could look like C:\Python27\ArcGIS10.x\ and then you need to reference the Scripts folder inside the Python install directory, because that is where pip is stored. Also, it is imperative that a semi-colon is used to separate variables.
+
+Geoprocessing Supported by Morps
 ========
 
 * Buffer
